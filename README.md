@@ -1,1 +1,129 @@
-# 🎬 YouTube Downloader (Python + GUI) Một ứng dụng tải video và nhạc từ YouTube với giao diện hiện đại sử dụng `ttkbootstrap`. Cho phép chọn chất lượng video (MP4) hoặc âm thanh (MP3), có thanh tiến trình trực quan, và hỗ trợ tạo file `.exe` để chạy độc lập không cần Python. ## 📌 Tính năng nổi bật - ✅ Giao diện đẹp, chuyên nghiệp với `ttkbootstrap` - ✅ Tải video MP4 với lựa chọn độ phân giải - ✅ Tải nhạc MP3 với lựa chọn chất lượng (128kbps, 192kbps) - ✅ Hiển thị tiến trình tải (progress bar) - ✅ Mở thư mục chứa file đã tải - ✅ Build thành `.exe` chạy được trên Windows không cần Python ## 🛠️ Yêu cầu môi trường - Python: 3.9.x (khuyên dùng, do PyInstaller tương thích tốt nhất) - pip: >=21.0 - OS: Windows 10/11 (64-bit) ## 📦 Cài đặt môi trường ```bash mkdir youtube_downloader && cd youtube_downloader && py -3.9 -m venv yt-env && yt-env\Scripts\activate && pip install yt-dlp ttkbootstrap ``` ## 🧩 Thư viện sử dụng: yt-dlp - tải video/audio từ YouTube | ttkbootstrap - giao diện đẹp cho tkinter | tkinter - GUI gốc của Python. ## ▶️ Cách chạy chương trình ```bash yt-env\Scripts\activate && python youtube_downloader.py ``` Sau khi chạy, nhập URL YouTube, chọn MP3 hoặc MP4, chọn chất lượng và nhấn "⬇️ Tải ngay". ## 📂 Cấu trúc thư mục: youtube_downloader/ ├── icon.ico ├── youtube_downloader.py ├── README.md └── yt-env/ ## 🛠️ Cách đóng gói file .exe: Cài PyInstaller bằng `pip install pyinstaller`, sau đó chạy: ```bash python -m PyInstaller --noconfirm --onefile --windowed --icon=icon.ico youtube_downloader.py ``` File `.exe` sẽ nằm trong thư mục `dist/`. Nếu icon không hiện, kiểm tra file `icon.ico` là định dạng thật và đặt cùng thư mục `.py`. Nếu lỗi, xoá folder `build/`, `dist/`, file `.spec` rồi thử lại. ## 💡 Gợi ý mở rộng: tải playlist, dán URL từ clipboard, chọn định dạng khác (.wav, .m4a...), thêm dark/light theme. ## 🧑‍💻 Tác giả: [Tên bạn] | GitHub: [github.com/tenban] | Email/Zalo: [liên hệ nếu muốn]
+# 🎬 YouTube Downloader (Python + GUI)
+
+A simple yet powerful desktop app to download YouTube videos or audio in your preferred quality. Built with a modern GUI using `ttkbootstrap`, it supports real-time progress display, MP3/MP4 conversion, and can be compiled into a standalone `.exe` file for Windows.
+
+---
+
+## 📌 Features
+
+- ✅ Modern GUI with `ttkbootstrap`
+- ✅ Download MP3 (audio) with 128kbps or 192kbps
+- ✅ Download MP4 (video) with selectable resolutions (e.g., 360p, 720p, 1080p)
+- ✅ Live download progress bar
+- ✅ Open download folder after completion
+- ✅ Can be bundled into a standalone `.exe` (no Python required)
+
+---
+
+## 🛠️ System Requirements
+
+- **Python**: 3.9.x (recommended for PyInstaller compatibility)
+- **pip**: ≥ 21.0
+- **OS**: Windows 10/11 (64-bit)
+- **FFmpeg**: No need to install separately; handled by `yt-dlp`
+
+---
+
+## 📦 Setup Instructions
+
+```bash
+# Step 1: Create project folder
+mkdir youtube_downloader
+cd youtube_downloader
+
+# Step 2: Create and activate virtual environment
+py -3.9 -m venv yt-env
+yt-env\Scripts\activate
+
+# Step 3: Install required libraries
+pip install yt-dlp ttkbootstrap
+```
+
+---
+
+## 🧩 Libraries Used
+
+| Library        | Purpose                           |
+|----------------|------------------------------------|
+| `yt-dlp`       | Download YouTube videos/audio     |
+| `ttkbootstrap` | Modern UI based on tkinter        |
+| `tkinter`      | Built-in Python GUI toolkit       |
+
+---
+
+## ▶️ How to Run the App
+
+```bash
+# Activate virtual environment
+yt-env\Scripts\activate
+
+# Run the app
+python youtube_downloader.py
+```
+
+After launch:
+1. Paste a YouTube URL
+2. Select format: MP3 or MP4
+3. Choose quality
+4. Click "⬇️ Download"
+
+---
+
+## 📁 Project Structure
+
+```
+youtube_downloader/
+│
+├── icon.ico                # Icon for .exe file
+├── youtube_downloader.py   # Main Python source file
+├── README.md
+└── yt-env/                 # Virtual environment folder
+```
+
+---
+
+## 💾 Build Standalone `.exe` (Windows)
+
+### 🔧 Step 1: Install PyInstaller
+
+```bash
+pip install pyinstaller
+```
+
+### 🏗️ Step 2: Build the Executable
+
+```bash
+python -m PyInstaller --noconfirm --onefile --windowed --icon=icon.ico youtube_downloader.py
+```
+
+### ✅ Output:
+
+- Final executable: `dist/youtube_downloader.exe`
+- You can run or share it without needing Python installed
+
+---
+
+## ⚠️ Tips for `.exe` Build
+
+- Ensure `icon.ico` is a valid `.ico` file (not just `.png` renamed)
+- Place `icon.ico` in the same folder as `youtube_downloader.py`
+- If build fails: delete `build/`, `dist/`, and `.spec` file, then rebuild
+
+---
+
+## 💡 Ideas for Future Improvements
+
+- Playlist or channel downloads
+- Clipboard auto-paste for copied links
+- Support additional formats (.wav, .m4a, .webm)
+- Light/dark theme toggle
+
+---
+
+## 🧑‍💻 Author
+
+- **Name**: [DuOzeNg]
+- **GitHub**: [github.com/DangTruongDuong]
+- **Contact**: [DangTruongDuong2102@gmail.com] (optional)
+
+---
