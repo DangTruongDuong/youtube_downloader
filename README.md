@@ -1,5 +1,7 @@
 # 🎬 YouTube Downloader (Python + GUI)
 
+# 🎬 run the software file in the dist folder
+
 A simple yet powerful desktop app to download YouTube videos or audio in your preferred quality. Built with a modern GUI using `ttkbootstrap`, it supports real-time progress display, MP3/MP4 conversion, and can be compiled into a standalone `.exe` file for Windows.
 
 ---
